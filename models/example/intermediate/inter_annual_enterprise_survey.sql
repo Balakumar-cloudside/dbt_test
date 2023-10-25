@@ -6,7 +6,7 @@ inter_survey as (
 SELECT
      SUM(CAST(t2.value AS INT64)) AS Total_Value,
      {{ dbt_utils.star(from=ref('stg_annual_enterprise_survey01'), except=["id"]) }},
-     {{ dbt_utils.star(from=ref('stg_annual_enterprise_survey02'), except=["id"]) }},
+     {{ dbt_utils.star(from=ref('stg_annual_enterprise_survey02'), except=["id"]) }}
         
 FROM
      {{ ref('stg_annual_enterprise_survey02') }} AS t2
