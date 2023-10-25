@@ -2,7 +2,7 @@ with
 
 {{config(materialized='view')}}
 
-inter_survey as
+inter_survey as (
 SELECT
      SUM(CAST(t2.value AS INT64)) AS Total_Value,
      {{ dbt_utils.star(from=ref('stg_annual_enterprise_survey01'), except=["id"]) }},
