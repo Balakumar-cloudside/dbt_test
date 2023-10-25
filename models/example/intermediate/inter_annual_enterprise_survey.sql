@@ -24,7 +24,7 @@ GROUP BY
       Variable, 
       Units,
       Variable_category,
-      Industry_aggregation_NZSIOC;
+      Industry_aggregation_NZSIOC
 )
 		
 Select * from inter_survey
